@@ -35,4 +35,6 @@ def pin_morsecode(pin, morsecode):
         sleep(LETTER_SPACE)
 
 
-pin_morsecode(pin, encode('prut'))
+while True:
+    pin_morsecode(pin, encode('prut'))
+    sleep(2)

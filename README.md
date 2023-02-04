@@ -6,10 +6,15 @@ the [Pico-W-Go extension](https://marketplace.visualstudio.com/items?itemName=pa
 - Install micro python on Pico using [instructions on raspberrypi.com](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html).
 - Install [Pico-W-Go extension](https://marketplace.visualstudio.com/items?itemName=paulober.pico-w-go) for VS Code.
 
+Select the `main.py` file and run "Pico-W-Go > Upload current file only" command via `Command+Shift+P`.
+
 ## Going lower
 
 The Pico-W-Go extension makes it easy to open a REPL on the Pico. There is also a [more technical explanation](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html) of how to open a REPL without such an extension. 
 
 ## Next steps
 
-How to run the Pico alone: https://projects.raspberrypi.org/en/projects/introduction-to-the-pico/12
+How to run the Pico alone: https://projects.raspberrypi.org/en/projects/introduction-to-the-pico/12 (done)
+
+How to connect to WiFi and read temp sensor: https://projects.raspberrypi.org/en/projects/get-started-pico-w/2
+
