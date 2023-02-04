@@ -2,9 +2,12 @@ from machine import Pin
 from time import sleep
 
 pin = Pin("LED", Pin.OUT)
-D = 0.1
-DAA = 0.4
-PAUSE = 0.6
+UNIT = 0.2
+D = UNIT
+DAA = UNIT*3
+INTERNAL_SPACE = UNIT
+LETTER_SPACE = UNIT*3
+WORD_SPACE = UNIT*4  # plus UNIT*3 from LETTER_SPACE
 
 def encode(msg):
     morse = {
@@ -17,7 +20,7 @@ def encode(msg):
          '1': [D, DAA, DAA, DAA, DAA], '2': [D, D, DAA, DAA, DAA], '3': [D, D, D, DAA, DAA], 
          '4': [D, D, D, D, DAA], '5': [D, D, D, D, D], '6': [DAA, D, D, D, D], 
          '7': [DAA, DAA, D, D, D], '8': [DAA, DAA, DAA, D, D],  '9': [DAA, DAA, DAA, DAA, D], 
-         '0': [DAA, DAA, DAA, DAA, DAA],
+         '0': [DAA, DAA, DAA, DAA, DAA], ' ': WORD_SPACE
     }
     return [morse[c.lower()] for c in msg]
 
@@ -28,8 +31,8 @@ def pin_morsecode(pin, morsecode):
             pin.toggle()
             sleep(duration)
             pin.toggle()
-            sleep(PAUSE-duration)
-        sleep(PAUSE)
+            sleep(INTERNAL_SPACE)
+        sleep(LETTER_SPACE)
 
 
-pin_morsecode(pin, encode('sos'))
+pin_morsecode(pin, encode('prut'))
